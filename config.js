@@ -16,7 +16,7 @@ config = {
         },
 
         server: {
-            host: 'fierce-thicket-1834.herokuapp.com',
+            host: '0.0.0.0',
             port: process.env.PORT
         },
 
