@@ -1,0 +1,9 @@
+language: nodejs
+deploy:
+  provider: heroku
+  api_key:
+    secure: LyGXw0eC8+wJtWP+WrdHcYeZ7dIPh4GoTO1L1fzaLGDLQ5vyiPUtFCzKjt8Y8w0QcBmXE9vRhbOlF8bNY16R7cQc/nUEui4Wok2aEh2j3rNz+evGgtoqHOTXp49v98y83NSKxha1oypRyGHI9bfiptI0T3si9PvpMGQJylr1NQ8=
+  app:
+    master: fierce-thicket-1834
+  on:
+    repo: ertrzyiks/android-blog
