@@ -5,14 +5,18 @@ config = {
     production: {
         url: 'https://fierce-thicket-1834.herokuapp.com/',
 
+        fileStorage: false,
         mail: {},
 
         database: {
-            client: 'sqlite3',
-                connection: {
-                filename: path.join(__dirname, '/content/data/ghost-dev.db')
-            },
-            debug: false
+            client: 'postgres',
+            connection: {
+                host: process.env.POSTGRES_HOST,
+                user: process.env.POSTGRES_USER,
+                password: process.env.POSTGRES_PASSWORD,
+                database: process.env.POSTGRES_DATABASE,
+                port: '5432'
+            }
         },
 
         server: {
