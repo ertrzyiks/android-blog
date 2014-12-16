@@ -27,3 +27,4 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 ghost-dev.db
+content/themes/ghostium
