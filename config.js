@@ -24,10 +24,33 @@ config = {
             port: process.env.PORT
         },
 
-
-        contentPath: path.join(__dirname, '/content/')
+        paths:{
+            contentPath: path.join(__dirname, '/content/')
+        }
     },
     development: {
+        url: 'http://10.168.20.26:2368',
+
+        mail: {},
+
+        database: {
+            client: 'sqlite3',
+            connection: {
+                filename: path.join(__dirname, '/content/data/ghost-dev.db')
+            },
+            debug: false
+        },
+
+        server: {
+            host: '10.168.20.26',
+            port: '2368'
+        },
+
+        paths:{
+            contentPath: path.join(__dirname, '/content/')
+        }
+    },
+    home: {
         url: 'http://192.168.0.17:2368',
 
         mail: {},
@@ -45,8 +68,9 @@ config = {
             port: '2368'
         },
 
-
-        contentPath: path.join(__dirname, '/content/')
+        paths:{
+            contentPath: path.join(__dirname, '/content/')
+        }
     }
 };
 
