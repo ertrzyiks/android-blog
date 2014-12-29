@@ -5,7 +5,6 @@ config = {
     production: {
         url: 'https://fierce-thicket-1834.herokuapp.com/',
 
-        fileStorage: false,
         mail: {},
 
         database: {
@@ -26,12 +25,21 @@ config = {
 
         paths:{
             contentPath: path.join(__dirname, '/content/')
+        },
+
+        aws: {
+            accessKeyId: process.env.S3_ACCESS_KEY_ID,
+            secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+            bucket: 'upload-android-blog',
+            region: 'eu-west-1'
         }
     },
     development: {
         url: 'http://10.168.20.26:2368',
 
         mail: {},
+
+        fileStorage: false,
 
         database: {
             client: 'sqlite3',
@@ -54,6 +62,8 @@ config = {
         url: 'http://192.168.0.17:2368',
 
         mail: {},
+
+        fileStorage: false,
 
         database: {
             client: 'sqlite3',
