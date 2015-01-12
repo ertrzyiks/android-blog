@@ -1,9 +1,14 @@
-var ghost = require('ghost'),
+var express = require('express'),
+    ghost = require('ghost'),
     path = require('path'),
     hbs = require('ghost/node_modules/express-hbs'),
 
     htmlencode = require('htmlencode'),
-    widget = new htmlencode.Encoder('numerical');
+    widget = new htmlencode.Encoder('numerical'),
+
+    spamProtection = require('./spam-protection'),
+
+    app = express();
 
 ghost({
     config: path.join(__dirname, 'config.js')
@@ -22,5 +27,7 @@ ghost({
         return new hbs.SafeString(newBio);
     });
 
-    ghostServer.start();
+    app.use(spamProtection);
+    app.use(ghostServer.rootApp);
+    ghostServer.start(app);
 });

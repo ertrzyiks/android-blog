@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ertrzyiks/android-blog",
   "dependencies": {
     "Ghostium": "git+https://github.com/ertrzyiks/ghostium.git#stp-developers",
+    "express": "^4.10.7",
     "ghost": "^0.5.7",
     "ghost-s3": "git://github.com/ertrzyiks/ghost-s3",
     "grunt": "^0.4.5",
